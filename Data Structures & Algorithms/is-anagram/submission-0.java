@@ -1,0 +1,19 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length()!=t.length())
+        {
+            return false;
+        }
+      HashMap<Character,Integer> hm1=new HashMap<>();
+      HashMap<Character,Integer> hm2=new HashMap<>();
+      for(char c:s.toCharArray())
+      {
+         hm1.put(c,hm1.getOrDefault(c,0)+1);
+      }
+      for(char d:t.toCharArray())
+      {
+         hm2.put(d,hm2.getOrDefault(d,0)+1);
+      }
+      return hm1.equals(hm2);
+    }
+}
